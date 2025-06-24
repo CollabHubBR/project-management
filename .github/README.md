@@ -44,10 +44,10 @@ Abaixo, descrevemos a organização principal dos pacotes do projeto:
     -   `service/`: Lógica de negócio, orquestração e validação (criação de usuários, atribuição de roles, gerenciamento de convites).
     -   `security/`: Implementações de segurança (autenticação, autorização, JWT).
     -   `util/`: Classes utilitárias e helpers.
-    -   `CollabhubbrUsersApplication.java`: Classe principal da aplicação Spring Boot.
+    -   `ProjectsApplication.java`: Classe principal da aplicação Spring Boot.
 -   `src/main/resources/`:
     -   `application.properties` ou `application.yml`: Arquivos de configuração do Spring (conexão com o banco de dados, portas, etc.).
--   `src/test/java/br/com/collabhubbr/users/`: Pacotes para testes unitários e de integração.
+-   `src/test/java/br/com/collabhubbr/projects/`: Pacotes para testes unitários e de integração.
 
 ### Instalação de Dependências
 
