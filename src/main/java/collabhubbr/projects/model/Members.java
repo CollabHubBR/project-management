@@ -17,6 +17,6 @@ public class Members{
     @ManyToOne(fetch = FetchType.LAZY)
     private Project project;
 
-    private RoleName role;
+    private RoleName role; // UserPermission Prepesist
 
 }

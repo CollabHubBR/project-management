@@ -1,13 +1,12 @@
 package collabhubbr.projects.controller;
 
+import collabhubbr.projects.DTO.RequestProjectDTO;
+import collabhubbr.projects.DTO.ResponseProjectDTO;
 import collabhubbr.projects.model.Project;
 import collabhubbr.projects.service.ProjectService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/project")
@@ -15,8 +14,10 @@ import java.util.List;
 public class ProjectController {
     private ProjectService projectService;
 
-    @GetMapping
-    public List<Project> getProjectService() {
-        return projectService.getAllProjects();
+    @PostMapping("/create")
+    public ResponseEntity<ResponseProjectDTO> createRepoProject(@RequestBody RequestProjectDTO project) {
+        return ResponseEntity.ok().body(
+                projectService.createProject(project)
+        );
     }
 }
