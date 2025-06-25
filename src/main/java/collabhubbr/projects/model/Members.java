@@ -4,18 +4,19 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 @Entity
 @Getter
 @Setter
-public class Project {
+public class Members{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String name;
+    private Long userId; // UserPermission
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Members> membersInfos;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Project project;
+
+    private RoleName role;
+
 }
