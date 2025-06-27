@@ -1,9 +1,7 @@
 package collabhubbr.projects.controller.impl;
 
 import collabhubbr.projects.controller.DTO.RequestProjectDTO;
-import collabhubbr.projects.controller.DTO.RequestTaskDTO;
 import collabhubbr.projects.controller.DTO.ResponseProjectDTO;
-import collabhubbr.projects.controller.DTO.ResponseTaskDTO;
 import collabhubbr.projects.controller.ProjectController;
 import collabhubbr.projects.service.ProjectService;
 import lombok.RequiredArgsConstructor;
@@ -19,13 +17,6 @@ public class ProjectControllerImpl implements ProjectController {
     public ResponseEntity<ResponseProjectDTO> createRepoProject(RequestProjectDTO project) {
         return ResponseEntity.ok().body(
                 projectService.createProject(project)
-        );
-    }
-
-    @Override
-    public ResponseEntity<ResponseTaskDTO> createTask(RequestTaskDTO task) {
-        return ResponseEntity.ok().body(
-                projectService.create(task)
         );
     }
 }

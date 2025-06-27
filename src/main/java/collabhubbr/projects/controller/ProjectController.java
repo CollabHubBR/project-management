@@ -16,6 +16,4 @@ public interface ProjectController {
     @PostMapping("/create")
     ResponseEntity<ResponseProjectDTO> createRepoProject(@Valid @RequestBody RequestProjectDTO project);
 
-    @PostMapping("/task/create")
-    ResponseEntity<ResponseTaskDTO> createTask(@Valid @RequestBody RequestTaskDTO project);
 }
